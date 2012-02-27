@@ -15,7 +15,7 @@ if len(sys.argv) is not 2:
     print "usage: edit [PAGE_NAME]"
     sys.exit(1)
 
-mw = init.mw("[HOST]", "[PATH]",)
+mw = init.mw("[HOST]", "[PATH]")
 
 page_name = sys.argv[1]
 
