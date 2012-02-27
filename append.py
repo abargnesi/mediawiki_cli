@@ -4,6 +4,9 @@
 # Inputs:
 #   PAGE_NAME - Name of a wiki page.
 #
+# Optional:
+#   TEXT_TO_APPEND - Text to append to the wiki page.
+#
 
 import init
 import datetime
