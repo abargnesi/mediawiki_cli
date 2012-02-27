@@ -28,9 +28,12 @@ page_name = sys.argv[1]
 log_page = mw.site.Pages[page_name]
 page_text = log_page.edit()
 
+if page_text not in (None,""):
+    page_text = string.join((page_text,'<br/>'), '')
+
 # append text, save and exit if append text provided
 if append_arg is not None:
-    updated_page_text = string.join((page_text,'<br/>',append_arg))
+    updated_page_text = string.join((page_text,append_arg))
     log_page.save(updated_page_text, summary='')
     print "Saved update to %s." % (page_name)
     sys.exit(0)
@@ -47,7 +50,7 @@ try:
         print "No update; exit without saving."
         sys.exit(0)
 
-    updated_page_text = string.join((page_text,'<br/>',edit),'')
+    updated_page_text = string.join((page_text,edit),'')
 
     log_page.save(updated_page_text, summary='')
     print "Saved update to %s." % (page_name)
